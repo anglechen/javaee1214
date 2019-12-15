@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.canway.web.mapper.UserMapper">
+	
+	<select id="selectAll" resultType="com.canway.web.domain.User">
+		
+		select * from user
+	
+	</select>
+	
+	<select id="selectById" parameterType="com.canway.web.domain.User" resultType="com.canway.web.domain.User">
+		
+		select * from user where id = #{id,jdbcType=INTEGER}
+		
+	</select>
+	
+	<select id="selectByName" parameterType="com.canway.web.domain.User" resultType="com.canway.web.domain.User">
+		
+		<!-- #{name}
+		${name} -->
+		select * from user where name = ${name}
+	
+	</select>
+	
+</mapper>
