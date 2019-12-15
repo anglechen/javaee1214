@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @date  下午2:17:24
  * 
  */
-@Component
+//@Component
 public class Car {
 	
 	

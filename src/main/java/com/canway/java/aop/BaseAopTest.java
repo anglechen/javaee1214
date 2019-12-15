@@ -11,9 +11,9 @@ package com.canway.java.aop;
 public class BaseAopTest {
 	
 	public static void main(String[] args) throws InterruptedException {
-		BaseAop base2 = new BaseAop2(new BaseAop());
+//		BaseAop base2 = new BaseAop2(new BaseAop());
 		BaseAop base1 = new BaseAop();
-		base2.add();
+//		base2.add();
 		base1.add();
 	}
 }

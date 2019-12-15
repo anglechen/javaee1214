@@ -8,7 +8,7 @@ package com.canway.java.aop;
  * @date  下午4:06:29
  * 
  */
-public class BaseAop2 extends BaseAop{
+public class BaseAop2 {
 	
 	private BaseAop baseAop;
 	
@@ -18,7 +18,6 @@ public class BaseAop2 extends BaseAop{
 	
 	
 	
-	@Override
 	public void add() throws InterruptedException {
 		long start = System.currentTimeMillis();
 		baseAop.add();
