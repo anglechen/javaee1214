@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1" targetRuntime="MyBatis3">
+    
+    <!-- 去掉注释 -->
+    <commentGenerator>
+    	<property name="supressAllComments" value="true"/>
+    </commentGenerator>
+    <!-- jdbc数据库连接 -->
+    <jdbcConnection connectionURL="jdbc:mysql://192.168.32.144:3306/javaeee" 
+    driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+    <!-- 实体类 -->
+    <javaModelGenerator targetPackage="com.generator.model" targetProject="javaee1214" />
+    <!-- mybatis mapper xml配置文件 -->
+    <sqlMapGenerator targetPackage="com.generator.mapper.xml" targetProject="javaee1214"></sqlMapGenerator>
+    <!-- 对于的mapper接口 -->
+    <javaClientGenerator targetPackage="com.generator.mapper" targetProject="javaee1214" type="XMLMAPPER" />
+    
+     <!-- 对应的数据库表 -->
+    <table schema="javaeee" tableName="user" ></table>
+    <table schema="javaeee" tableName="product"></table>
+  </context>
+</generatorConfiguration>

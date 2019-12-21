@@ -36,7 +36,7 @@
 	<!-- 开启自动代理 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
-	
+	<!-- 数据源 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://192.168.32.144:3306/javaeee"></property>
@@ -62,11 +62,15 @@
 		</property>
 	</bean> -->
 	
+	<!-- mybaitis sqlsessionfactory 配置 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource"  ref="dataSource"></property>
 		<property name="mapperLocations" value="classpath:com/canway/web/mapper/xml/*.xml" ></property>
+		<!-- 类型别名配置 -->
+		<property name="typeAliasesPackage" value="com.canway.web.domain"></property>
 	</bean>
 	
+	<!-- spring 和mybatis 整合配置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.canway.web.mapper"></property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
