@@ -1,10 +1,10 @@
-package com.canway.web.mapper;
+package com.canway.web.service;
 
 import com.canway.web.domain.User;
 
-public interface UserMapper {
-
-    int deleteByPrimaryKey(Integer id);
+public interface UserService {
+	
+	int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
 
@@ -15,4 +15,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+	
+
 }

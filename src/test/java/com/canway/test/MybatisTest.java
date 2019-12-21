@@ -20,6 +20,7 @@ public class MybatisTest {
 	 */
 	
 	public static void main(String[] args) {
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("application-simple.xml");
 		UserMapper userMapper = context.getBean(UserMapper.class);
 		System.out.println(userMapper);
@@ -34,17 +35,17 @@ public class MybatisTest {
 //		user.setAge(1);
 		
 		long start = System.currentTimeMillis();
-		List<User> results = userMapper.selectAll(user);
-		for(User u : results) {
-			System.out.println(u);
-		}
-		for(int i = 0; i< 10 ; i++) {
-			userMapper.selectAll(user);
-			System.out.println("正在执行第：" + (i+1) +" 次usermapper的调用");
-		}
-		
-		long end = System.currentTimeMillis();
-		System.out.println("11次数据库查询一共发费了：" +(end - start ) + " 毫秒");
+//		List<User> results = userMapper.insertSelective(user);
+//		for(User u : results) {
+//			System.out.println(u);
+//		}
+//		for(int i = 0; i< 10 ; i++) {
+////			userMapper.insertSelective(user);
+//			System.out.println("正在执行第：" + (i+1) +" 次usermapper的调用");
+//		}
+//		
+//		long end = System.currentTimeMillis();
+//		System.out.println("11次数据库查询一共发费了：" +(end - start ) + " 毫秒");
 		
 		/* 新增数据 */
 //		user.setName("4441");
