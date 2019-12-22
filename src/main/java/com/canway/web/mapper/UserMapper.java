@@ -1,5 +1,7 @@
 package com.canway.web.mapper;
 
+import java.util.List;
+
 import com.canway.web.domain.User;
 
 public interface UserMapper {
@@ -15,4 +17,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    
+    List<User> selectAll(User user);
 }

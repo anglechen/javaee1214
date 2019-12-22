@@ -97,4 +97,26 @@
       sex = #{sex,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  
+  
+  <select id="selectAll" parameterType="com.canway.web.domain.User" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    <where>
+    	<if test="name != null and name !=''">
+    		and name = #{name}
+    	</if>
+    	<if test="age != null ">
+    		and age = #{age}
+    	</if>
+    </where>
+  </select>
+  
+  
+  
+  
+  
 </mapper>

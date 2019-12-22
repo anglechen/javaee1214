@@ -80,7 +80,19 @@
 	
 	
 	<!-- spirng web mvc -->
-	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:annotation-driven>
+	<!-- 字符转化编码 -->
+	<mvc:message-converters>
+	     <bean	class="org.springframework.http.converter.StringHttpMessageConverter">
+			<property name="supportedMediaTypes">
+				<list>
+					<value>text/plain;charset=utf-8</value>
+	            	<value>text/html;charset=UTF-8</value>
+	        	</list>
+	        </property>
+	    </bean>
+   </mvc:message-converters>
+	</mvc:annotation-driven>
 	
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -89,10 +101,11 @@
 	</bean>
 	
 	
+	<!-- swaggerui -->
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+    <mvc:resources mapping="/webjars/**"     location="classpath:/META-INF/resources/webjars/" />
 	
 	
 	
-	
-	
-	
+		
 </beans>

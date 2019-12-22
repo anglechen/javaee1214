@@ -1,5 +1,7 @@
 package com.canway.web.service;
 
+import java.util.List;
+
 import com.canway.web.domain.User;
 
 public interface UserService {
@@ -16,5 +18,6 @@ public interface UserService {
 
     int updateByPrimaryKey(User record);
 	
+    List<User> selectAll(User user);
 
 }
