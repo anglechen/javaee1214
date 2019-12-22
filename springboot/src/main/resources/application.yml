@@ -1,0 +1,12 @@
+server:  port: 9090  servlet:    context-path: /springboot
+spring:  datasource:    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.32.144:3306/javaeee?useSSL=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  mvc:    view:      prefix: /jsp/
+      suffix: .jsp
+    
+mybatis:  mapper-locations: com/canway/springboot/mapper/xml/*.xml
+  type-aliases-package: com.canway.springboot.domain
+  
+logging:  level:    root: debug
